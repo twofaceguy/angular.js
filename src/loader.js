@@ -66,7 +66,7 @@ function setupModuleLoader(window) {
      */
     return function module(name, requires, configFn) {
       if (requires && modules.hasOwnProperty(name)) {
-        modules[name] = null;
+        modules[name] = null; //如果已经存在则删除
       }
       return ensure(modules, name, function() {
         if (!requires) {
